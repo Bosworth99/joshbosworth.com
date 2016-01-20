@@ -1,0 +1,29 @@
+{
+  "name": "joshbosworth.com",
+  "version": "1.0.0",
+  "homepage": "https://github.com/Bosworth99/joshbosworth.com",
+  "authors": [
+    "Josh <josh@joshbosworth.com>"
+  ],
+  "description": "personal site",
+  "main": "javascript/app/index.js",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "javascript/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "font-awesome": "~4.5.0",
+    "jquery": "~2.2.0",
+    "underscore": "~1.8.3",
+    "gsap": "~1.18.2",
+    "requirejs": "~2.1.22",
+    "breakpoint": "~4.6.4"
+  }
+}

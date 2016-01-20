@@ -8,6 +8,17 @@ $font-arsenal           : 'arsenalregular';
 $font-header            : $font-bebas;
 $font-body              : $font-arsenal;
 
+/* FONT-AWESOME */
+$fa-font-path           : "../fonts/FontAwesome";
+$fa-font-size-base      : 24px;
+$fa-line-height-base    : 1;
+
+$fa-css-prefix          : fa;
+$fa-version             : "4.5.0";
+$fa-border-color        : #eee;
+$fa-inverse             : #fff;
+$fa-li-width            : (30em / 14);
+
 /* COLORS */
 $color-darkest          : #000;
 $color-darker           : #222;
@@ -17,7 +28,7 @@ $color-light            : #ddd;
 $color-lighter          : #eee;
 $color-lightest         : #fff;
 
-$primary-background     : #fff;
+$primary-background     : #44a39e;
 $secondary-background 	: #EBEBE5;
 
 $color-error 			: #FF0000;
@@ -37,8 +48,9 @@ $link-color-over        : #FF0101;
 $primary-btn-font       : $color-lighter;
 $primary-btn-over       : $color-lightest; */
 
-
 /* GRIDS /////////////////////////////////////////////////////////////////////*/
 
-$mobile: 768px;
-$desktop: 769px;
+$mobile: screen max-width 787px;
+$tablet: screen 788px 980px;
+$desktop: screen 788px;
+$widescreen: screen 981px;

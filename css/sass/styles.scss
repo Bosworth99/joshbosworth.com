@@ -1,7 +1,7 @@
 /* //////////////////////////////////////////////////////////////////////////*/
 /*
-/*  APP : 10k-interactive.com
-/*  URL : www.10k-interactive.com
+/*  APP : joshbosworth.com
+/*  URL : www.joshbosworth.com
 /*  Author : josh@joshbosworth.com
 /*
 /* //////////////////////////////////////////////////////////////////////////*/
@@ -9,9 +9,22 @@
 /* vars  */
 @import "settings";
 @import "mixins";
+@import "../../javascript/vendor/breakpoint-sass/stylesheets/_breakpoint";
 
-@import "./fonts/Bebas-Neue/stylesheet";
-@import "./fonts/Arsenal/stylesheet";
+@import "../../fonts/Bebas-Neue/stylesheet";
+@import "../../fonts/Arsenal/stylesheet";
+
+// NOTE font awesome didnt ship wiht a mixin, wierdly. this is in the _core.scss file.
+// @mixin fa(){
+//     display: inline-block;
+//     font: normal normal normal #{$fa-font-size-base}/#{$fa-line-height-base} FontAwesome; // shortening font declaration
+//     font-size: inherit; // can't have font-size inherit on line above, so need to override
+//     text-rendering: auto; // optimizelegibility throws things off #1094
+//     -webkit-font-smoothing: antialiased;
+//     -moz-osx-font-smoothing: grayscale;
+// }
+@import "../../javascript/vendor/font-awesome/scss/font-awesome";
 
 /* base styles  */
 @import "base";
+@import "content";
