@@ -13,11 +13,6 @@ var filter          = require('gulp-filter');
 
 gulp.task('default', ['serve']);
 
-gulp.task('test', function() {
-    return gulp.src('test/index.html')
-        .pipe(mochaPhantomJs({reporter: 'dot', useColors: true}));
-});
-
 // Use BrowserSync to fire up a localhost server and start a livereload. We
 // inject CSS changes, and reload fully for javascript and html changes.
 // http://www.browsersync.io/docs/options/
@@ -29,14 +24,14 @@ gulp.task('serve', ['sass'], function() {
         reloadOnRestart: true,
         open: false,
     });
-    gulp.watch('javascript/app/**/*.js'/*, ['test']*/).on('change', reload);
-    gulp.watch("css/sass/*.scss", ['sass']);
-    gulp.watch("javascript/app/**/*.scss", ['sass']);
-    gulp.watch("javascript/app/**/*.html").on('change', reload);
+    gulp.watch('./js/app/**/*.js'/*, ['test']*/).on('change', reload);
+    gulp.watch("./css/sass/*.scss", ['sass']);
+    gulp.watch("./js/app/**/*.scss", ['sass']);
+    gulp.watch("./js/app/**/*.html").on('change', reload);
 });
 
 gulp.task('sass', function () {
-    gulp.src('css/styles.scss')
+    gulp.src('./css/sass/styles.scss')
 
         // Include source maps so Chrome extension tools shows SASS line numbers
         .pipe(sourcemaps.init())

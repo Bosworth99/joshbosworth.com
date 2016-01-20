@@ -19,7 +19,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 100;
 }
 
-h1, h2, h3, h4, h5, h6, p, strong, span, div, li, td{ color:$primary-font-color;}
+h1, h2, h3, h4, h5, h6, p, strong, span, div, li, td{ color:$font-color-primary;}
 
 p { font-size:14px; line-height:1.3em; padding:0; margin-bottom:.65em; }
 p img { margin: 0; }
@@ -33,7 +33,7 @@ b,strong { font-weight:bold }
 
 /*  LINKS  ///////////////////////////////////////////////////////////////////*/
 a, a.link{
-    color: $primary-link-color;
+    color: $link-color-up;
     font-family : $font-body, Arial, sans-serif;
     display:inline-block;
     cursor:pointer;
@@ -47,17 +47,8 @@ a, a.link, a:visited, a.link:visited {
 }
 
 a:hover, a.link:hover, a:focus, a:focus.link {
-    color:$primary-link-hover;
+    color:$link-color-over;
 }
-
-/*  Blockquotes  /////////////////////////////////////////////////////////////*/
-blockquote, blockquote p { font-size: 17px; line-height: 24px; font-style: italic; }
-blockquote { margin: 0 0 20px; padding: 9px 20px 0 19px;}
-blockquote cite { display: block; font-size: 12px; }
-blockquote cite:before { content: "\2014 \0020"; }
-blockquote cite a, blockquote cite a:visited, blockquote cite a:visited { }
-
-hr { border:1px solid #444; border-width: 1px 0 0; clear: both; margin: 5px; height: 0; }
 
 /*  LISTS  //////////////////////////////////////////////////////////////////*/
 ul, ol { margin:0; padding:0; }
@@ -82,19 +73,9 @@ nav {
 }
 
 
-
 /*  IMAGES  /////////////////////////////////////////////////////////////////*/
 img {
     display:inline-block;
     max-width: 100%;
     height: auto;
 }
-
-/* TABLES ///////////////////////////////////////////////////////////////////*/
-table {}
-table th { font-weight: bold;}
-table td { }
-
-table,
-th,
-td{ font-size: 13px;}

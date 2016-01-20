@@ -47,29 +47,6 @@
 @mixin button-hover(){}
 @mixin button-active(){}
 
-@mixin default-button($size:16px, $lineheight:16px){
-    @include button($size, $lineheight);
-
-    @include bordered(lighten($default-btn,10%),darken($default-btn,10%),darken($default-btn,10%),lighten($default-btn,5%));
-    @include gradient($default-btn, lighten($default-btn,5%), $default-btn);
-    //background-position:0 100%;
-    color: $default-btn-font;
-}
-
-@mixin default-button-hover(){
-    @include bordered(lighten($default-btn,5%),darken($default-btn,15%),darken($default-btn,15%),$default-btn);
-    @include gradient(darken($default-btn,5%), $default-btn, darken($default-btn,5%));
-    //background-position:0 0;
-    color: $default-btn-over;
-}
-
-@mixin default-button-active(){
-    @include bordered(lighten($default-btn,10%),darken($default-btn,10%),darken($default-btn,10%),lighten($default-btn,5%));
-    @include gradient(darken($default-btn,10%), $default-btn, darken($default-btn,10%));
-    //background-position:0 0;
-    color: $default-btn-over;
-}
-
 @mixin primary-button($size:16px, $lineheight:16px){
     @include button($size, $lineheight);
 
@@ -93,37 +70,6 @@
     color: $primary-btn-over;
 }
 
-@mixin secondary-button($size:16px, $lineheight:16px){
-    @include button($size, $lineheight);
-
-    @include bordered(lighten($secondary-btn,10%),darken($secondary-btn,10%),darken($secondary-btn,10%),lighten($secondary-btn,5%));
-    @include gradient($secondary-btn, lighten($secondary-btn,5%), $secondary-btn);
-    //background-position:0 100%;
-    color: $secondary-btn-font;
-}
-
-@mixin secondary-button-hover(){
-    @include bordered(lighten($secondary-btn,5%),darken($secondary-btn,15%),darken($secondary-btn,15%),$secondary-btn);
-    @include gradient(darken($secondary-btn,5%), $secondary-btn, darken($secondary-btn,5%));
-    //background-position:0 0;
-    color: $secondary-btn-over;
-}
-
-@mixin secondary-button-active(){
-    @include bordered(lighten($secondary-btn,10%),darken($secondary-btn,10%),darken($secondary-btn,10%),lighten($secondary-btn,5%));
-    @include gradient(darken($secondary-btn,10%), $secondary-btn, darken($secondary-btn,10%));
-    //background-position:0 0;
-    color: $secondary-btn-over;
-}
-
-@mixin disabled-button($size:16px, $lineheight:16px){
-    @include button($size, $lineheight);
-
-    @include bordered(lighten($disabled-btn,10%),darken($disabled-btn,10%),darken($disabled-btn,10%),lighten($disabled-btn,5%));
-    @include gradient($disabled-btn, lighten($disabled-btn,5%), $disabled-btn);
-    //background-position:0 100%;
-    color: $disabled-btn-font;
-}
 
 ///////////////////////////////////////////////////////////////////////////////
 //  FORMS
