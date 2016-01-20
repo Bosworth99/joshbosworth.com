@@ -1,0 +1,104 @@
+/* VARS /////////////////////////////////////////////////////////////////////*/
+
+/* FONTS */
+
+$font-bebas             : 'BebasNeueRegular';
+$font-arsenal           : 'arsenalregular';
+
+$font-header            : $font-bebas;
+$font-body              : $font-arsenal;
+
+/* COLORS */
+
+$color-darkest          : #000;
+$color-darker           : #222;
+$color-dark             : #444;
+$color-mid              : #999;
+$color-light            : #ddd;
+$color-lighter          : #eee;
+$color-lightest         : #fff;
+
+
+$primary-background     : #fff;
+$secondary-background 	: #EBEBE5;
+
+$dk-green               : #669966;
+$lt-green               : #8bcf85;
+$lt-orange              : #F4AA35;
+$dk-orange              : #E49314;
+$lt-yellow				: #FCFFD3;
+$dk-tan                 : #a3a188;
+$lt-tan                 : #deded5;
+$lt-blue                : #275fc4;
+$dk-blue                : #275fc4;
+$lt-red 				: #FF8989;
+$dk-red 				: #F62121;
+
+$color-error 			: $dk-red;
+$color-success 			: $lt-green;
+$color-primary 			: $dk-blue;
+
+/* TYPE */
+$primary-font-color     : #121416;
+$alt-font-color         : #FFFFFF;
+
+$small-font-size        : 11px;
+
+/* LINKS */
+$primary-link-color     : #FFFFFF;
+$primary-link-hover     : #FF0101;
+
+$alt-link-color         : #333;
+$alt-Link-hover         : #666;
+
+/* BUTTONS */
+$primary-btn            : $lt-green;
+$primary-btn-font       : $color-lighter;
+$primary-btn-over       : $color-lightest;
+
+$secondary-btn          : $lt-orange;
+$secondary-btn-font     : $color-lighter;
+$secondary-btn-over     : $color-lightest;
+
+$default-btn 			: $color-light;
+$default-btn-font		: darken($color-mid,5%);
+$default-btn-over 		: $color-dark;
+
+$disabled-btn 			: $color-light;
+$disabled-btn-font		: $color-mid;
+$disabled-btn-over 		: $color-mid;
+
+/* NAV*/
+$primary-tab-up         : $dk-green;
+$primary-tab-over       : $color-lightest;
+
+/* TABLES */
+$primary-pagination     : #fff;
+$primary-filter         : #fff;
+
+$primary-thead          : $dk-tan;
+$primary-row            : $lt-tan;
+$alt-row                : $color-lightest;
+$row-hover              : $lt-yellow;
+$row-selected	 		: $lt-yellow;
+
+/* TOASTER */
+$toaster-default 		: $lt-yellow;
+$toaster-success 		: $color-success;
+$toaster-error 			: $color-error;
+
+/* GRIDS /////////////////////////////////////////////////////////////////////*/
+
+$mobile: 768px;
+$desktop: 769px;
+
+$susy: (
+  math           : fluid,
+  output         : float,
+  gutter-position: outside,
+  columns        : 6,
+  gutters        : .1,
+  debug          : (
+    image : hide
+  )
+);

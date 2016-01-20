@@ -1,0 +1,100 @@
+html{
+    height:100%;
+    width:100%;
+    margin:0;
+    padding:0;
+}
+
+body {
+    font-family : $font-body, Arial, sans-serif;
+    height:100%;
+    width:100%;
+    background-color:rgb(0,0,0);
+    padding:0;
+    margin:0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font-header, Arial, sans-serif;
+    font-weight: 100;
+}
+
+h1, h2, h3, h4, h5, h6, p, strong, span, div, li, td{ color:$primary-font-color;}
+
+p { font-size:14px; line-height:1.3em; padding:0; margin-bottom:.65em; }
+p img { margin: 0; }
+
+em { font-style: italic; }
+b,strong { font-weight: bold;  text-shadow:0px 0px 1px rgba(50,50,50,.3);}
+small { font-size: 80%; color:inherit;}
+
+strong, span, em {color:inherit; line-height:inherit; font-size:inherit;}
+b,strong { font-weight:bold }
+
+/*  LINKS  ///////////////////////////////////////////////////////////////////*/
+a, a.link{
+    color: $primary-link-color;
+    font-family : $font-body, Arial, sans-serif;
+    display:inline-block;
+    cursor:pointer;
+    font-size:13px;
+    @include transition();
+}
+
+a, a.link, a:visited, a.link:visited {
+    text-decoration:none;
+    outline:0;
+}
+
+a:hover, a.link:hover, a:focus, a:focus.link {
+    color:$primary-link-hover;
+}
+
+/*  Blockquotes  /////////////////////////////////////////////////////////////*/
+blockquote, blockquote p { font-size: 17px; line-height: 24px; font-style: italic; }
+blockquote { margin: 0 0 20px; padding: 9px 20px 0 19px;}
+blockquote cite { display: block; font-size: 12px; }
+blockquote cite:before { content: "\2014 \0020"; }
+blockquote cite a, blockquote cite a:visited, blockquote cite a:visited { }
+
+hr { border:1px solid #444; border-width: 1px 0 0; clear: both; margin: 5px; height: 0; }
+
+/*  LISTS  //////////////////////////////////////////////////////////////////*/
+ul, ol { margin:0; padding:0; }
+ul { list-style: none outside; }
+ol { list-style: decimal; }
+ul li { padding:0; margin:0; line-height:1;}
+
+/* NAV //////////////////////////////////////////////////////////////////////*/
+
+nav {
+    display:inline-block;
+
+    ul{
+        list-style:none;
+
+        li{
+            display:inline-block;
+            float:left;
+            padding:5px 10px;
+        }
+    }
+}
+
+
+
+/*  IMAGES  /////////////////////////////////////////////////////////////////*/
+img {
+    display:inline-block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* TABLES ///////////////////////////////////////////////////////////////////*/
+table {}
+table th { font-weight: bold;}
+table td { }
+
+table,
+th,
+td{ font-size: 13px;}

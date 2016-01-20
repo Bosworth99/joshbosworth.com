@@ -1,0 +1,334 @@
+///////////////////////////////////////////////////////////////////////////////
+//
+//	COMMENT	- Less mixins!
+//            Generic mixin library. Make some more for your theme.
+//            - NOW SASSY!
+//  TODO - implement prefixer and make these smarter.
+//
+///////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////////
+//  BUTTONS
+///////////////////////////////////////////////////////////////////////////////
+
+
+@mixin _button(){
+    @include border-radius(2px);
+    @include drop-shadow(0,1px,2px,.2);
+    @include transition();
+    padding:8px 14px 6px 14px;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 600;
+    margin:4px;
+    text-decoration: none;
+    transition:all 150ms;
+    outline:none;
+    //background-size: auto 200%;
+
+    .icon{
+      position:relative;
+    }
+}
+
+
+@mixin button($size:16px, $lineheight:16px){
+    @include _button();
+
+    font-size  : $size;
+    line-height: $lineheight;
+
+    .icon{
+      font-size:14px;
+      top:-1px;
+    }
+}
+
+@mixin button-hover(){}
+@mixin button-active(){}
+
+@mixin default-button($size:16px, $lineheight:16px){
+    @include button($size, $lineheight);
+
+    @include bordered(lighten($default-btn,10%),darken($default-btn,10%),darken($default-btn,10%),lighten($default-btn,5%));
+    @include gradient($default-btn, lighten($default-btn,5%), $default-btn);
+    //background-position:0 100%;
+    color: $default-btn-font;
+}
+
+@mixin default-button-hover(){
+    @include bordered(lighten($default-btn,5%),darken($default-btn,15%),darken($default-btn,15%),$default-btn);
+    @include gradient(darken($default-btn,5%), $default-btn, darken($default-btn,5%));
+    //background-position:0 0;
+    color: $default-btn-over;
+}
+
+@mixin default-button-active(){
+    @include bordered(lighten($default-btn,10%),darken($default-btn,10%),darken($default-btn,10%),lighten($default-btn,5%));
+    @include gradient(darken($default-btn,10%), $default-btn, darken($default-btn,10%));
+    //background-position:0 0;
+    color: $default-btn-over;
+}
+
+@mixin primary-button($size:16px, $lineheight:16px){
+    @include button($size, $lineheight);
+
+    @include bordered(lighten($primary-btn,10%),darken($primary-btn,10%),darken($primary-btn,10%),lighten($primary-btn,5%));
+    @include gradient($primary-btn, lighten($primary-btn,5%), $primary-btn);
+    //background-position:0 100%;
+    color: $primary-btn-font;
+}
+
+@mixin primary-button-hover(){
+    @include bordered(lighten($primary-btn,5%),darken($primary-btn,15%),darken($primary-btn,15%),$primary-btn);
+    @include gradient(darken($primary-btn,5%), $primary-btn, darken($primary-btn,5%));
+    //background-position:0 0;
+    color: $primary-btn-over;
+}
+
+@mixin primary-button-active(){
+    @include bordered(lighten($primary-btn,10%),darken($primary-btn,10%),darken($primary-btn,10%),lighten($primary-btn,5%));
+    @include gradient(darken($primary-btn,10%), $primary-btn, darken($primary-btn,10%));
+    //background-position:0 0;
+    color: $primary-btn-over;
+}
+
+@mixin secondary-button($size:16px, $lineheight:16px){
+    @include button($size, $lineheight);
+
+    @include bordered(lighten($secondary-btn,10%),darken($secondary-btn,10%),darken($secondary-btn,10%),lighten($secondary-btn,5%));
+    @include gradient($secondary-btn, lighten($secondary-btn,5%), $secondary-btn);
+    //background-position:0 100%;
+    color: $secondary-btn-font;
+}
+
+@mixin secondary-button-hover(){
+    @include bordered(lighten($secondary-btn,5%),darken($secondary-btn,15%),darken($secondary-btn,15%),$secondary-btn);
+    @include gradient(darken($secondary-btn,5%), $secondary-btn, darken($secondary-btn,5%));
+    //background-position:0 0;
+    color: $secondary-btn-over;
+}
+
+@mixin secondary-button-active(){
+    @include bordered(lighten($secondary-btn,10%),darken($secondary-btn,10%),darken($secondary-btn,10%),lighten($secondary-btn,5%));
+    @include gradient(darken($secondary-btn,10%), $secondary-btn, darken($secondary-btn,10%));
+    //background-position:0 0;
+    color: $secondary-btn-over;
+}
+
+@mixin disabled-button($size:16px, $lineheight:16px){
+    @include button($size, $lineheight);
+
+    @include bordered(lighten($disabled-btn,10%),darken($disabled-btn,10%),darken($disabled-btn,10%),lighten($disabled-btn,5%));
+    @include gradient($disabled-btn, lighten($disabled-btn,5%), $disabled-btn);
+    //background-position:0 100%;
+    color: $disabled-btn-font;
+}
+
+///////////////////////////////////////////////////////////////////////////////
+//  FORMS
+///////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+//  GRADIENTS
+///////////////////////////////////////////////////////////////////////////////
+
+@mixin gradient($color: #F5F5F5, $start: #EEE, $stop: #FFF) {
+  background: $color;
+  background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, $start),color-stop(1, $stop));
+  background-image: -ms-linear-gradient(bottom, $start, $stop);
+  background-image: linear-gradient($start, $stop);
+}
+
+@mixin horizontal-gradient($startColor: #eee, $endColor: white) {
+  background-color: $startColor;
+  background-image: -webkit-gradient(linear, left top, right top, from($startColor), to($endColor));
+  background-image: -ms-linear-gradient(left, $startColor, $endColor);
+  background: linear-gradient(-90deg, $start, $stop);
+}
+
+@mixin rd-gradient($color: #F5F5F5, $start: #EEE, $stop: #FFF) {
+  background: $color;
+  background-image: -webkit-radial-gradient(circle, $start, $stop);
+  background-image:-ms-radial-gradient(center center, circle cover, $start 0%, $stop 100%);
+  background-image:radial-gradient(center center, circle cover, $start 0%, $stop 100%);
+}
+
+@mixin bw-gradient($color: #F5F5F5, $start: 0, $stop: 255) {
+  background: $color;
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, rgb($start,$start,$start)),color-stop(1, rgb($stop,$stop,$stop)));
+  background-image: -ms-linear-gradient(bottom,rgb($start,$start,$start) 0%, rgb($stop,$stop,$stop) 100%);
+  background-image: linear-gradient( rgb($stop,$stop,$stop), rgb($start,$start,$start));
+}
+
+///////////////////////////////////////////////////////////////////////////////
+//  DROP SHADOWS
+///////////////////////////////////////////////////////////////////////////////
+
+@mixin drop-shadow($x-axis: 2px, $y-axis: 2px, $blur: 2px, $alpha: 0.2) {
+  -webkit-box-shadow: $x-axis $y-axis $blur rgba(0, 0, 0, $alpha);
+     -moz-box-shadow: $x-axis $y-axis $blur rgba(0, 0, 0, $alpha);
+          box-shadow: $x-axis $y-axis $blur rgba(0, 0, 0, $alpha);
+}
+
+@mixin box-shadow($x-axis: 0, $y-axis: 0, $blur: 2px, $color: rgba(0,0,0,0.25)) {
+  -webkit-box-shadow: $x-axis $y-axis $blur $color;
+     -moz-box-shadow: $x-axis $y-axis $blur $color;
+          box-shadow: $x-axis $y-axis $blur $color;
+}
+
+@mixin box-shadows($shadows){
+  -webkit-box-shadow: $shadows;
+     -moz-box-shadow: $shadows;
+          box-shadow: $shadows;
+}
+
+@mixin inner-shadow($horizontal:0, $vertical:1px, $blur:2px, $alpha: 0.4) {
+  -webkit-box-shadow: inset $horizontal $vertical $blur rgba(0, 0, 0, $alpha);
+     -moz-box-shadow: inset $horizontal $vertical $blur rgba(0, 0, 0, $alpha);
+          box-shadow: inset $horizontal $vertical $blur rgba(0, 0, 0, $alpha);
+}
+
+@mixin text-shadow($x: 0, $y: 1px, $blur: 1px, $color: rgba(0,0,0,0.25)) {
+  -webkit-text-shadow: $x $y $blur $color;
+     -moz-text-shadow: $x $y $blur $color;
+          text-shadow: $x $y $blur $color;
+}
+
+
+///////////////////////////////////////////////////////////////////////////////
+//  BORDERS
+///////////////////////////////////////////////////////////////////////////////
+
+@mixin bordered($top-color: #EEE, $right-color: #EEE, $bottom-color: #EEE, $left-color: #EEE) {
+  border-top: solid 1px $top-color;
+  border-left: solid 1px $left-color;
+  border-right: solid 1px $right-color;
+  border-bottom: solid 1px $bottom-color;
+}
+
+@mixin border-radius($radius: 2px) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+          border-radius: $radius;
+  -webkit-background-clip: padding-box;
+     -moz-background-clip: padding;
+          background-clip: padding-box;
+}
+
+@mixin border-radiuses($topright: 0, $bottomright: 0, $bottomleft: 0, $topleft: 0) {
+  -webkit-border-bottom-right-radius: $bottomright;
+   -webkit-border-bottom-left-radius: $bottomleft;
+     -webkit-border-top-right-radius: $topright;
+      -webkit-border-top-left-radius: $topleft;
+  -moz-border-radius-bottomright: $bottomright;
+   -moz-border-radius-bottomleft: $bottomleft;
+     -moz-border-radius-topright: $topright;
+      -moz-border-radius-topleft: $topleft;
+  border-bottom-right-radius: $bottomright;
+   border-bottom-left-radius: $bottomleft;
+     border-top-right-radius: $topright;
+      border-top-left-radius: $topleft;
+}
+
+///////////////////////////////////////////////////////////////////////////////
+//  OPACITY
+///////////////////////////////////////////////////////////////////////////////
+
+@mixin transparent($opacity: 50) {
+  -moz-opacity: $opacity;
+  -webkit-opacity: $opacity;
+  opacity:$opacity * .01;
+  filter:alpha(opacity=$opacity);
+}
+
+@mixin opacity($opacity: 0.5) {
+  -moz-opacity: $opacity;
+  -webkit-opacity: $opacity;
+  opacity: $opacity;
+  $opperc: $opacity * 100;
+}
+
+///////////////////////////////////////////////////////////////////////////////
+//  TRANSITIONS
+///////////////////////////////////////////////////////////////////////////////
+
+@mixin transition-duration($duration: 150ms) {
+  -moz-transition-duration: $duration;
+  -webkit-transition-duration: $duration;
+  -o-transition-duration: $duration;
+  transition-duration: $duration;
+}
+
+@mixin transition($duration:150ms, $ease:ease-out) {
+  -webkit-transition: all $duration $ease;
+  -moz-transition: all $duration $ease;
+  -o-transition: all $duration $ease;
+  transition: all $duration $ease;
+}
+
+@mixin type-transition($type:all, $duration:150ms, $ease:ease-in-out) {
+  -webkit-transition: $type $duration $ease;
+  -moz-transition: $type $duration $ease;
+  -o-transition: $type $duration $ease;
+  transition: $type $duration $ease;
+}
+
+@mixin transition-delay($duration:150ms){
+  -webkit-transition-delay: $duration;
+  transition-delay: $duration;
+}
+
+@mixin transform(...) {
+  -webkit-transform: $arguments;
+  -moz-transform: $arguments;
+  -o-transform: $arguments;
+  -ms-transform: $arguments;
+  transform: $arguments;
+}
+
+@mixin animation(...){
+  -webkit-animation: $arguments;
+  animation: $arguments;
+}
+
+@mixin rotation($deg:5deg){
+  -webkit-transform: rotate($deg);
+  -moz-transform: rotate($deg);
+  transform: rotate($deg);
+}
+
+@mixin translate($x:0, $y:0) {
+  @include transform(translate($x, $y));
+}
+
+@mixin scale($ratio:1.5){
+  @inlclude transform(scale($ratio));
+}
+
+// CLEARFIX
+@mixin clearfix(){
+    zoom: 1;
+  &:before, &:after { content: ""; display: table; }
+  &:after { clear: both; }
+}
+
+@keyframes rotating{
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+.rotating{
+  animation: rotating 6s linear infinite;
+}
