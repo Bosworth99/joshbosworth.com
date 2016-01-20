@@ -1,0 +1,19 @@
+{
+  "name": "joshbosworth.com",
+  "version": "1.0.0",
+  "description": "personal site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bosworth99/joshbosworth.com.git"
+  },
+  "author": "josh@joshbosworth.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bosworth99/joshbosworth.com/issues"
+  },
+  "homepage": "https://github.com/Bosworth99/joshbosworth.com#readme"
+}
