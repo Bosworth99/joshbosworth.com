@@ -37,7 +37,7 @@ a, a.link{
     display:inline-block;
     cursor:pointer;
     font-size:13px;
-    @include transition();
+    @include type-transition(color, 250ms);
 }
 
 a, a.link, a:visited, a.link:visited {
@@ -70,7 +70,6 @@ nav {
         }
     }
 }
-
 
 /*  IMAGES  /////////////////////////////////////////////////////////////////*/
 img {

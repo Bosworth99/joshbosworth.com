@@ -21,11 +21,8 @@ body{
 }
 
 .panel{
-    background-color:white;
-    box-shadow: 2px 10px 25px rgba(50, 50, 50, .5);
-
     order:1;
-    flex: 0 1 760px;
+    flex: 0 1 980px;
     max-width:calc(100% - 40px);
 
     display: flex;
@@ -45,53 +42,129 @@ body{
         }
         &.content{
             order:2;
-            flex: 0 1 50%;
+            flex: 0 1 100%;
+
+            @include breakpoint($desktop){
+                flex: 0 1 50%;
+            }
         }
         &.footer{
             order:3;
             flex: 0 1 auto;
         }
     }
-
 }
 
-/* CONENT ///////////////////////////////////////////////////////////////////*/
+/* CONTENT ///////////////////////////////////////////////////////////////////*/
 
-.body{}
+.panel{
+    background-color:#fcf3d4;
+    overflow: hidden;
+    @include drop-shadow(2px, 6px, 10px, .3);
+    @include transition(500ms);
 
-.header{
-    background-color: $color-primary;
-
-    .brand h1{
-        color:$color-lightest;
-        text-align: center;
+    &:hover{
+        @include drop-shadow(2px, 10px, 25px, .8);
     }
 }
 
-.content{
+.header{
+    background-color: $color-primary;
+    position:relative;
+    height:auto;
+    @include type-transition(background-color, 250ms);
+
+    .brand{
+        @include breakpoint($desktop){
+            position:absolute;
+            top:0;
+            bottom:0;
+            margin:auto;
+            width:100%;
+            height:20px;
+        }
+
+        h1{
+            color:$color-lightest;
+            text-align: center;
+            @include type-transition(color, 250ms);
+
+            @include breakpoint($desktop){
+                margin:0;
+            }
+        }
+    }
+
+    &:hover{
+        background-color: $color-secondary;
+
+        .brand h1{
+            color:$color-primary;
+        }
+
+    }
 
 }
 
+.content{
+    background-color: $color-lightest;
+}
+
 .link-wrapper{
+    overflow:hidden;
+    margin:20px;
 
     ul.links{
+        @include clearfix();
 
-        .link{
+        li.link{
+            line-height: 2em;
+            position:relative;
+            margin:10px;
+            display:inline;
+            float:left;
+
+            @include breakpoint($desktop){
+                margin:0;
+                display:block;
+                float:none;
+            }
 
             a{
+                font-size:22px;
+                margin-left: 30px;
+
+                @include breakpoint($desktop){
+                    font-size:18px;
+                }
+
                 &:hover{}
                 &:active{}
             }
 
-            .icon:before{
-                @include fa;
+            .icon{
+                position:absolute;
+                text-align:center;
+                vertical-align: middle;
+                width:20px;
+
+                &:before{
+                    @include fa;
+                    color:$color-primary;
+                    font-size:22px;
+
+                    @include breakpoint($desktop){
+                        font-size:18px;
+                    }
+                }
             }
 
+            &.k10 .icon:before            { content : $fa-var-power-off; }
             &.facebook .icon:before       { content : $fa-var-facebook; }
             &.linkedin .icon:before       { content : $fa-var-linkedin; }
             &.stackoverflow .icon:before  { content : $fa-var-stack-overflow; }
             &.github .icon:before         { content : $fa-var-code-fork; }
-            &.codepen .icon:before        { content : $fa-var-codepen; }
+            &.codepen .icon:before        { content : $fa-var-terminal; }
             &.instagram .icon:before      { content : $fa-var-instagram; }
             &.email .icon:before          { content : $fa-var-envelope; }
             &.location .icon:before       { content : $fa-var-map-marker; }
