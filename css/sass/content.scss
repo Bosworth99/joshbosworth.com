@@ -124,6 +124,16 @@ body{
         }
     }
 
+    #dostuff.page{
+        background-color: $color-primary;
+        @include type-transition(background-color, 250ms);
+
+        p{
+            color:$color-lightest;
+            text-align: center;
+            @include type-transition(color, 250ms);
+        }
+    }
 
     #bye.page{
         background-color: $color-primary;

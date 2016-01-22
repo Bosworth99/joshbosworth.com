@@ -2384,6 +2384,13 @@ body {
       color: #fff;
       text-align: center;
       transition: color 250ms ease-in-out; }
+  .story #dostuff.page {
+    background-color: #1D173D;
+    transition: background-color 250ms ease-in-out; }
+    .story #dostuff.page p {
+      color: #fff;
+      text-align: center;
+      transition: color 250ms ease-in-out; }
   .story #bye.page {
     background-color: #1D173D;
     transition: background-color 250ms ease-in-out; }
