@@ -29,10 +29,10 @@ body{
     flex-direction:row;
     flex-wrap: wrap;
 
-    .row{
+    .box{
         box-sizing: border-box;
 
-        &.header{
+        &.story{
             order:1;
             flex: 0 1 100%;
 
@@ -40,17 +40,13 @@ body{
                 flex: 0 1 50%;
             }
         }
-        &.content{
+        &.connect{
             order:2;
             flex: 0 1 100%;
 
             @include breakpoint($desktop){
                 flex: 0 1 50%;
             }
-        }
-        &.footer{
-            order:3;
-            flex: 0 1 auto;
         }
     }
 }
@@ -68,21 +64,35 @@ body{
     }
 }
 
-.header{
-    background-color: $color-primary;
+.story{
     position:relative;
-    height:auto;
-    @include type-transition(background-color, 250ms);
+    height:350px;
+    width:100%;
+    overflow:hidden;
 
-    .brand{
-        @include breakpoint($desktop){
-            position:absolute;
-            top:0;
-            bottom:0;
-            margin:auto;
-            width:100%;
-            height:20px;
+    @include breakpoint($desktop){}
+
+    .pages{
+        width:100%;
+        height:350px;
+        transform: translateY(0);
+        @include type-transition(transform, 500ms);
+
+        .page{
+            height:100%;
+            width::100%;
+            text-align: center;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
+
+    }
+
+    #hello.page{
+        background-color: $color-primary;
+        @include type-transition(background-color, 250ms);
 
         h1{
             color:$color-lightest;
@@ -93,17 +103,80 @@ body{
                 margin:0;
             }
         }
+
+        // &:hover{
+        //     background-color: $color-secondary;
+        //
+        //     h1{
+        //         color:$color-primary;
+        //     }
+        // }
     }
 
-    &:hover{
-        background-color: $color-secondary;
+    #intro.page{
+        background-color: $color-primary;
+        @include type-transition(background-color, 250ms);
 
-        .brand h1{
-            color:$color-primary;
+        p{
+            color:$color-lightest;
+            text-align: center;
+            @include type-transition(color, 250ms);
+        }
+    }
+
+
+    #bye.page{
+        background-color: $color-primary;
+        @include type-transition(background-color, 250ms);
+
+        p{
+            color:$color-lightest;
+            text-align: center;
+            @include type-transition(color, 250ms);
+        }
+    }
+
+    .control{
+        position:absolute;
+        display:inline-block;
+        height:30px;
+        width:30px;
+        left: 50%;
+        transform: translateX(-15px);
+        text-align:center;
+        border-radius: 15px;
+
+        .icon{
+            cursor:pointer;
+
+            &:before{
+                color:$color-secondary;
+                font-size:32px;
+                top:0;
+            }
+
+            &:hover:before{
+                color:$color-lightest;
+            }
         }
 
-    }
+        &[data-dir="up"]{
+            top:5px;
 
+            .icon:before{
+                content : $fa-var-angle-up;
+            }
+        }
+
+        &[data-dir="down"]{
+            bottom:5px;
+
+            .icon:before{
+                content : $fa-var-angle-down;
+            }
+
+        }
+    }
 }
 
 .content{
@@ -149,9 +222,8 @@ body{
                 width:20px;
 
                 &:before{
-                    @include fa;
                     color:$color-primary;
-                    font-size:22px;
+                    font-size:20px;
 
                     @include breakpoint($desktop){
                         font-size:18px;
@@ -173,5 +245,13 @@ body{
 }
 
 .footer{
+    position:absolute;
+    z-index: 9999;
+    bottom:5px;
+    right:10px;
 
+    .colophon{
+        font-size:13px;
+        color: $color-highlight;
+    }
 }

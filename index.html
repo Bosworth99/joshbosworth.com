@@ -14,7 +14,7 @@
 		<link id="css-styles" rel="stylesheet" href="css/styles.css"/>
 
 	</head>
-	<body>
+	<body onload="window.onload();">
 
 		<!-- begin content -->
 		<div class="container">
@@ -22,15 +22,33 @@
 			<div class="panel">
 
 				<!-- begin header -->
-				<header class="header row">
-					<div class="brand">
-						<h1>Josh Bosworth, Human</h1>
+				<section class="story box">
+
+					<div id="pages" class="pages">
+
+						<div id="hello" class="page" data-page="hello">
+							<h1>Josh Bosworth, Human</h1>
+						</div>
+
+						<div id="intro" class="page" data-page="intro">
+							<p>I&apos;m a web developer and graphic designer, living and working in Olympia, Wa.</p>
+						</div>
+
+						<div id="bye" class="page" data-page="bye">
+							<p>Adios!</p>
+						</div>
+
 					</div>
-				</header>
+
+					<div id="clickUp" class="control" data-dir="up"><i class="icon">&nbsp;</i></div>
+					<div id="clickDown" class="control" data-dir="down"><i class="icon">&nbsp;</i></div>
+
+				</section>
+
 				<!-- end header -->
 
 				<!-- begin content -->
-				<section class="content row">
+				<section class="connect box">
 					<div class="link-wrapper">
 						<ul class="links">
 
@@ -102,10 +120,9 @@
 				<!-- end content -->
 
 				<!-- begin footer -->
-				<footer class="footer row">
-					<div class="main">
-					</div>
+				<footer class="footer">
 					<div class="colophon">
+						&copy; 2016 | joshbosworth.com
 					</div>
 				</footer>
 				<!-- end footer -->

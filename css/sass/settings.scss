@@ -9,7 +9,7 @@ $font-header            : $font-bebas;
 $font-body              : $font-arsenal;
 
 /* FONT-AWESOME */
-$fa-font-path           : "../fonts/FontAwesome";
+//$fa-font-path           : "/blab/FontAwesome"; // manually updated path in sytlesheet
 $fa-font-size-base      : 24px;
 $fa-line-height-base    : 1;
 
@@ -28,11 +28,12 @@ $color-light            : #ddd;
 $color-lighter          : #eee;
 $color-lightest         : #fff;
 
-$primary-background     : #44a39e;
+$primary-background     : #1D173D;
 $secondary-background 	: #EBEBE5;
 
 $color-primary 			: #1D173D;
 $color-secondary        : #fefaec;
+$color-highlight        : #E3CB83;
 $color-error 			: #FF0000;
 $color-success 			: #086F00;
 

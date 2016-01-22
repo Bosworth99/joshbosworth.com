@@ -49,6 +49,21 @@ a:hover, a.link:hover, a:focus, a:focus.link {
     color:$link-color-over;
 }
 
+/*  ICONS  ///////////////////////////////////////////////////////////////////*/
+
+.icon{
+    &:before{
+        @include fa;
+        font-size:22px;
+        @include transition();
+
+        @include breakpoint($desktop){
+            font-size:18px;
+        }
+    }
+}
+
+
 /*  LISTS  //////////////////////////////////////////////////////////////////*/
 ul, ol { margin:0; padding:0; }
 ul { list-style: none outside; }
