@@ -2452,20 +2452,25 @@ body {
       .link-wrapper ul.links li.link a {
         font-size: 22px;
         margin-left: 30px; }
+        .link-wrapper ul.links li.link a span {
+          display: none; }
         @media screen and (min-width: 788px) {
           .link-wrapper ul.links li.link a {
-            font-size: 18px; } }
+            font-size: 18px; }
+            .link-wrapper ul.links li.link a span {
+              display: inline-block;
+              margin-left: 30px; } }
       .link-wrapper ul.links li.link .icon {
-        position: absolute;
-        text-align: center;
-        vertical-align: middle;
         width: 20px; }
+        @media screen and (min-width: 788px) {
+          .link-wrapper ul.links li.link .icon {
+            position: absolute;
+            text-align: center;
+            vertical-align: middle;
+            font-size: 18px; } }
         .link-wrapper ul.links li.link .icon:before {
           color: #1D173D;
           font-size: 20px; }
-          @media screen and (min-width: 788px) {
-            .link-wrapper ul.links li.link .icon:before {
-              font-size: 18px; } }
       .link-wrapper ul.links li.link.k10 .icon:before {
         content: ""; }
       .link-wrapper ul.links li.link.facebook .icon:before {
