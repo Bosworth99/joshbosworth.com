@@ -22,7 +22,7 @@
     "font-awesome": "~4.5.0",
     "jquery": "~2.2.0",
     "underscore": "~1.8.3",
-    "gsap": "~1.18.2",
+    "gsap": "^1.18.2",
     "requirejs": "~2.1.22",
     "breakpoint": "~4.6.4"
   }
