@@ -86,13 +86,27 @@ body{
             display: flex;
             align-items: center;
             justify-content: center;
+
+            background-color: $color-primary;
+            /*
+            @include type-transition(background-color, 250ms); */
+
+            p{
+                padding:20px;
+                color:$color-lightest;
+                text-align: center;
+                line-height:2em;
+            }
+
+            /* &:hover{
+                background-color: darken($color-primary,2%);
+            } */
+
         }
 
     }
 
     #hello.page{
-        background-color: $color-primary;
-        @include type-transition(background-color, 250ms);
 
         h1{
             color:$color-lightest;
@@ -102,49 +116,16 @@ body{
             @include breakpoint($desktop){
                 margin:0;
             }
-        }
 
-        // &:hover{
-        //     background-color: $color-secondary;
-        //
-        //     h1{
-        //         color:$color-primary;
-        //     }
-        // }
-    }
-
-    #intro.page{
-        background-color: $color-primary;
-        @include type-transition(background-color, 250ms);
-
-        p{
-            color:$color-lightest;
-            text-align: center;
-            @include type-transition(color, 250ms);
+            span{
+                opacity: .70;
+            }
         }
     }
 
-    #dostuff.page{
-        background-color: $color-primary;
-        @include type-transition(background-color, 250ms);
-
-        p{
-            color:$color-lightest;
-            text-align: center;
-            @include type-transition(color, 250ms);
-        }
-    }
-
-    #bye.page{
-        background-color: $color-primary;
-        @include type-transition(background-color, 250ms);
-
-        p{
-            color:$color-lightest;
-            text-align: center;
-            @include type-transition(color, 250ms);
-        }
-    }
+    #intro.page{}
+    #dostuff.page{}
+    #bye.page{}
 
     .control{
         position:absolute;
@@ -198,24 +179,27 @@ body{
     margin:20px;
 
     ul.links{
+        text-align: center;
         @include clearfix();
+
+        @include breakpoint($desktop){
+            text-align: left;
+        }
+
 
         li.link{
             line-height: 2em;
             position:relative;
             margin:10px;
             display:inline;
-            float:left;
 
             @include breakpoint($desktop){
                 margin:0;
                 display:block;
-                float:none;
             }
 
             a{
                 font-size:22px;
-                margin-left: 30px;
 
                 span{
                   display:none;
@@ -236,6 +220,7 @@ body{
 
             .icon{
                 width:20px;
+                color:$color-primary;
 
                 @include breakpoint($desktop){
                     position:absolute;
@@ -244,10 +229,9 @@ body{
                     font-size:18px;
                 }
 
-                &:before{
+                /* &:before{
                     color:$color-primary;
-                    font-size:20px;
-                }
+                } */
             }
 
             &.k10 .icon:before            { content : $fa-var-power-off; }

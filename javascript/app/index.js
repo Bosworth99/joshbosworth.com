@@ -82,11 +82,14 @@ App.Story = (function(){
     function doChangePage(){
         //console.log('App.Pages::doChangePage _index:%s', _index);
 
-        var top = String((_index * VERT) * -1)+'px';
+        var top = String((_index * VERT) * -1);
 
         // pages is teh container for individual screens.
         // - change its transform over time
-        _pages.style.transform = 'translateY('+top+')';
+
+        //_pages.style.transform = 'translateY('+top+')';
+
+        TweenMax.to( _pages, '.150', {y:top});
 
         if (_index === 0){
 
