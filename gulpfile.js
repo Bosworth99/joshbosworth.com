@@ -11,12 +11,15 @@ var browserSync     = require('browser-sync').create();
 var reload          = browserSync.reload;
 var filter          = require('gulp-filter');
 
+//var webpack         = require('webpack');
+var webpack         = require('webpack-stream');
+
 gulp.task('default', ['serve']);
 
 // Use BrowserSync to fire up a localhost server and start a livereload. We
 // inject CSS changes, and reload fully for javascript and html changes.
 // http://www.browsersync.io/docs/options/
-gulp.task('serve', ['sass'], function() {
+gulp.task('serve', ['sass', 'webpack'], function() {
 
     browserSync.init({
         server: "./",
@@ -24,10 +27,11 @@ gulp.task('serve', ['sass'], function() {
         reloadOnRestart: true,
         open: false,
     });
-    gulp.watch('./js/app/**/*.js'/*, ['test']*/).on('change', reload);
+    gulp.watch('./javascript/app/**/*.js', ['webpack']);
+    gulp.watch('./javascript/dist/**/*.js').on('change', reload);
     gulp.watch("./css/sass/*.scss", ['sass']);
-    gulp.watch("./js/app/**/*.scss", ['sass']);
-    gulp.watch("./js/app/**/*.html").on('change', reload);
+    gulp.watch("./javascript/app/**/*.scss", ['sass']);
+    gulp.watch("./javascript/app/**/*.html").on('change', reload);
 });
 
 gulp.task('sass', function () {
@@ -60,10 +64,16 @@ gulp.task('sass', function () {
         // So much magic
         .pipe(gulp.dest('css'))
 
-        // Filter it so only .css files pass through to the reload, since the
-        // map files also would trigger it (and trigger a full reload, which we
-        // don't want, since we're just injecting the CSS here)
+        // Filter it so only .css files pass through to the reload
         .pipe(filter('*.css'))
         .pipe(reload({stream: true}));
 });
 
+gulp.task('webpack', function() {
+
+    gulp.src('./javascript/app/index.js')
+
+        .pipe( webpack( require('./webpack.config.js') ) )
+        .pipe( gulp.dest('./javascript/dist/'))
+        .pipe(notify({ title: 'Webpack Compiled!', message: '<%= file.relative %>', sound: false}))
+});
