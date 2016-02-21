@@ -1,4 +1,4 @@
-// # Gulpfile
+// Gulpfile
 var gulp            = require('gulp');
 var sass            = require('gulp-sass');
 var watch           = require('gulp-watch');
@@ -11,7 +11,7 @@ var browserSync     = require('browser-sync').create();
 var reload          = browserSync.reload;
 var filter          = require('gulp-filter');
 
-//var webpack         = require('webpack');
+// Build
 var webpack         = require('webpack-stream');
 
 gulp.task('default', ['serve']);
@@ -27,11 +27,20 @@ gulp.task('serve', ['sass', 'webpack'], function() {
         reloadOnRestart: true,
         open: false,
     });
-    gulp.watch('./javascript/app/**/*.js', ['webpack']);
-    gulp.watch('./javascript/dist/**/*.js').on('change', reload);
+
+    // scss
     gulp.watch("./css/sass/*.scss", ['sass']);
     gulp.watch("./javascript/app/**/*.scss", ['sass']);
+    gulp.watch("./css/styles.css").on('change', reload);
+
+    // html
+    gulp.watch("./index.html").on('change', reload);
     gulp.watch("./javascript/app/**/*.html").on('change', reload);
+
+    // js
+    gulp.watch('./javascript/app/**/*.js', ['webpack']);
+    gulp.watch('./javascript/dist/**/*.js').on('change', reload);
+
 });
 
 gulp.task('sass', function () {

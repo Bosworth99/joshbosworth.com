@@ -8,6 +8,7 @@ var App = (function(){
         , _modules;
 
     function init(){
+        console.log('App::init');
 
         _this = this;
 
@@ -17,7 +18,7 @@ var App = (function(){
     }
 
     function start(){
-        console.log('App:start', _this);
+        console.log('App::start', _this);
 
         _modules.story.init();
     }

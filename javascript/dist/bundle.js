@@ -67,6 +67,7 @@
 	        , _modules;
 
 	    function init(){
+	        console.log('App::init');
 
 	        _this = this;
 
@@ -76,7 +77,7 @@
 	    }
 
 	    function start(){
-	        console.log('App:start', _this);
+	        console.log('App::start', _this);
 
 	        _modules.story.init();
 	    }
@@ -100,16 +101,15 @@
 	    var TweenMax = __webpack_require__(3);
 	    var $ = __webpack_require__(5);
 
-
-	    var _this;
-	    var _pages;
-	    var _page;
-	    var _clickDown;
-	    var _clickUp;
+	    var _this
+	        , _pages
+	        , _page
+	        , _clickDown
+	        , _clickUp
+	        , _count;
 
 	    var _index = 0;
-	    var _count;
-	    var VERT = 350;
+	    var _vert = 350;
 
 	    function init(){
 	        console.log('Story::init', this);
@@ -121,6 +121,8 @@
 	        _count = _page.length;
 	        _clickDown = document.getElementById('clickDown');
 	        _clickUp = document.getElementById('clickUp');
+
+	        _vert = 350;
 
 	        addEventHandlers();
 	        doChangePage();
@@ -154,12 +156,7 @@
 	    function doChangePage(){
 	        //console.log('App.Pages::doChangePage _index:%s', _index);
 
-	        var top = String((_index * VERT) * -1);
-
-	        // pages is teh container for individual screens.
-	        // - change its transform over time
-
-	        //_pages.style.transform = 'translateY('+top+')';
+	        var top = String((_index * _vert) * -1);
 
 	        TweenMax.to( _pages, '.150', {y:top});
 

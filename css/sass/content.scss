@@ -67,6 +67,7 @@ body{
 .story{
     position:relative;
     height:350px;
+    height:100%;
     width:100%;
     overflow:hidden;
 
@@ -80,7 +81,7 @@ body{
 
         .page{
             height:100%;
-            width::100%;
+            width:100%;
             text-align: center;
 
             display: flex;
@@ -241,6 +242,7 @@ body{
             &.github .icon:before         { content : $fa-var-code-fork; }
             &.codepen .icon:before        { content : $fa-var-terminal; }
             &.instagram .icon:before      { content : $fa-var-instagram; }
+            &.behance .icon:before        { content : $fa-var-behance-square; }
             &.email .icon:before          { content : $fa-var-envelope; }
             &.location .icon:before       { content : $fa-var-map-marker; }
         }
